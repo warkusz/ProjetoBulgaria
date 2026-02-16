@@ -1,0 +1,103 @@
+# ============================================================
+# WeatherStation — .gitignore
+# Covers: PlatformIO firmware, Next.js dashboard, Python venv,
+#         macOS system files, editors, and environment secrets
+# ============================================================
+
+
+# ------------------------------------------------------------
+# macOS
+# ------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+
+# ------------------------------------------------------------
+# PlatformIO (SN0186-VSCPI-Firmware)
+# ------------------------------------------------------------
+SN0186-VSCPI-Firmware/.pio/
+SN0186-VSCPI-Firmware/.pioenvs/
+SN0186-VSCPI-Firmware/.piolibdeps/
+
+
+# ------------------------------------------------------------
+# Next.js / Node.js (weather-dashboard)
+# ------------------------------------------------------------
+weather-dashboard/.next/
+weather-dashboard/out/
+weather-dashboard/node_modules/
+weather-dashboard/.npm
+weather-dashboard/.cache/
+
+# Prisma generated client
+weather-dashboard/prisma/generated/
+
+# Build output
+weather-dashboard/build/
+weather-dashboard/dist/
+
+
+# ------------------------------------------------------------
+# Environment variables & secrets — NEVER commit these
+# ------------------------------------------------------------
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+weather-dashboard/.env
+weather-dashboard/.env.*
+
+
+# ------------------------------------------------------------
+# Python virtualenv
+# ------------------------------------------------------------
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+
+# ------------------------------------------------------------
+# Logs
+# ------------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ------------------------------------------------------------
+# Editor & IDE
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+
+# ------------------------------------------------------------
+# Claude Code internal files
+# ------------------------------------------------------------
+.claude/
+
+
+# ------------------------------------------------------------
+# Misc
+# ------------------------------------------------------------
+*.pem
+*.key
+Thumbs.db
