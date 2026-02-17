@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model WeatherReading {
+  id             BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  recordedAt     DateTime @default(now()) @map("recorded_at") @db.DateTime(3)
+  windDirection  Int      @map("wind_direction") @db.SmallInt
+  windSpeedMph   Decimal  @map("wind_speed_mph") @db.Decimal(5, 2)
+  windSpeedMs    Decimal  @map("wind_speed_ms") @db.Decimal(5, 2)
+  windGustMph    Decimal  @map("wind_gust_mph") @db.Decimal(5, 2)
+  windGustMs     Decimal  @map("wind_gust_ms") @db.Decimal(5, 2)
+  tempF          Decimal  @map("temp_f") @db.Decimal(5, 1)
+  tempC          Decimal  @map("temp_c") @db.Decimal(5, 1)
+  rain1hIn       Decimal  @map("rain_1h_in") @db.Decimal(6, 2)
+  rain1hMm       Decimal  @map("rain_1h_mm") @db.Decimal(6, 1)
+  rain24hIn      Decimal  @map("rain_24h_in") @db.Decimal(6, 2)
+  rain24hMm      Decimal  @map("rain_24h_mm") @db.Decimal(6, 1)
+  humidity       Int      @db.TinyInt
+  pressureMbar   Decimal  @map("pressure_mbar") @db.Decimal(7, 1)
+  pressureInhg   Decimal  @map("pressure_inhg") @db.Decimal(6, 2)
+  rawString      String   @map("raw_string") @db.VarChar(64)
+  checksum       String   @db.VarChar(8)
+
+  @@index([recordedAt])
+  @@map("weather_readings")
+}
+
+model AdminUser {
+  id           Int       @id @default(autoincrement()) @db.UnsignedInt
+  username     String    @unique @db.VarChar(64)
+  passwordHash String    @map("password_hash") @db.VarChar(255)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  lastLogin    DateTime? @map("last_login")
+
+  @@map("admin_users")
+}
+
+model DashboardConfig {
+  id           Int      @id @default(autoincrement()) @db.UnsignedInt
+  cardKey      String   @unique @map("card_key") @db.VarChar(64)
+  cardLabel    String   @map("card_label") @db.VarChar(128)
+  isVisible    Boolean  @default(true) @map("is_visible")
+  displayOrder Int      @default(0) @map("display_order") @db.SmallInt
+  updatedAt    DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("dashboard_config")
+}
