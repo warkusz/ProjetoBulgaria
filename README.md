@@ -1,3 +1,23 @@
+<div align="center">
+  <table border="0" cellpadding="20" cellspacing="0">
+    <tr>
+      <td align="center" valign="middle">
+        <img src="weather-dashboard/public/vscpi.png" alt="VSCPI Burgas" height="100"/>
+        <br/>
+        <sub><b>ПГКПИ (VSCPI)</b><br/>Burgas, Bulgaria</sub>
+      </td>
+      <td align="center" valign="middle" style="font-size:2em; padding: 0 16px;">
+        ×
+      </td>
+      <td align="center" valign="middle">
+        <img src="weather-dashboard/public/esja-logo.png" alt="ESJA Seixal" height="100"/>
+        <br/>
+        <sub><b>Escola Secundária Dr. José Afonso (ESJA)</b><br/>Seixal, Portugal</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
 # VSCPI Weather Station
 ### A Real-Time Atmospheric Monitoring System
 **Erasmus+ Student Exchange Project**
